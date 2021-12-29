@@ -1,0 +1,42 @@
+﻿@{ 
+    ViewBag.Title = "Login";
+}
+<div class="container">
+    <div class="row text-center">
+        <div class="col-md-4 offset-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <div>
+                        <img class="login-img" src="~/image/login.png" />
+                    </div>
+                    <div class="login-title">
+                        <h4>Log In</h4>
+                    </div>
+                    <div class="login-form mt-4">
+                        <form action="../Login/Verify" method="post">
+                            <div class="form-row">
+                                <div class="form-group col-md-12">
+                                    <input id="username" name="Username" placeholder="Username" class="form-control" type="text" value=@ViewBag.Username>
+                                </div>
+                                <div class="form-group col-md-12">
+                                    <input id="password" name="Password" placeholder="Password" class="form-control" type="password">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <span class="message">@ViewBag.Verify</span>
+                            </div>
+
+                            <div class="form-row">
+                                <button type="submit" class="btn btn-danger btn-block">Login</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="form-row">
+                        <a class="repass" href="#">Reset Password </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
