@@ -12,6 +12,7 @@ namespace ES.Models
         {
            
         }
-        public DbSet<Account> Accounts { get; set; }
+        public DbSet<Account> Account { get; set; }
+        public DbSet<SoLieu> SoLieu { get; set; }
     }
 }

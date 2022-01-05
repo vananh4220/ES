@@ -7,7 +7,83 @@
     </div>
 </nav>
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/series-label.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/export-data.js"></script>
+
+<figure class="highcharts-figure">
+    <div id="container"></div>
+</figure>
+
+<script>
+    $(document).ready(function () {
+        $.getJSON("/Home/GetData", function (data) {
+            debugger;
+            var MatTroi = []
+            var Gio = []
+            var SinhKhoi = []
+            var Tong = []
+            var ThoiGian = []
+
+            for (var i = 0; i < data.length; i++) {
+                MatTroi.push(data[i].mT_HT);
+                Gio.push(data[i].g_HT);
+                SinhKhoi.push(data[i].sK_HT);
+                Tong.push(data[i].t_HT);
+                ThoiGian.push(data[i].thoiGian);
+            }
+
+            Highcharts.chart('container', {
+                chart: {
+                    type: 'spline'
+                },
+                title: {
+                    text: 'Năng lượng tái tạo'
+                },
+                /*subtitle: {
+                    text: 'Source: WorldClimate.com'
+                },*/
+                xAxis: {
+                    categories: ThoiGian
+                },
+                yAxis: {
+                    title: {
+                        text: 'Công suất hiện tại'
+                    },
+                    labels: {
+                        formatter: function () {
+                            return this.value + 'MW';
+                        }
+                    }
+                },
+                tooltip: {
+                    crosshairs: true,
+                    shared: true
+                },
+                plotOptions: {
+                    spline: {
+                        marker: {
+                            radius: 4,
+                            lineColor: '#666666',
+                            lineWidth: 1
+                        }
+                    }
+                },
+                series: [{
+                    name: 'Mặt trời',
+                    data: MatTroi
+                }, {
+                    name: 'Gió',
+                    data: Gio
+                }, {
+                    name: 'Sinh khối ',
+                    data: SinhKhoi
+                }, {
+                    name: 'Tổng',
+                    data: Tong
+                }]
+            });
+        });
+    })
+</script>

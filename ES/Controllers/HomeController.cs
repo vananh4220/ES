@@ -12,11 +12,10 @@ namespace ES.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
+        private readonly DataContext _context;
+        public HomeController(DataContext context)
         {
-            _logger = logger;
+            _context = context;
         }
 
         public IActionResult Index()
@@ -28,7 +27,20 @@ namespace ES.Controllers
             }
             else return View();
         }
-
+        
+        public ActionResult GetData()
+        {
+            var query = _context.SoLieu.Select(s => new HienThiSoLieuModel()
+            {
+                
+                MT_HT = s.MT_HT,
+                G_HT = s.G_HT,
+                SK_HT = s.SK_HT,
+                T_HT = s.T_HT,
+                ThoiGian = s.ThoiGian.ToString("dd/MM/yyyy")
+            }).ToList();
+            return Json(query);
+        }
         public IActionResult Logout()
         {
             HttpContext.Session.Clear();

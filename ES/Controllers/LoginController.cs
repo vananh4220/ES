@@ -25,7 +25,9 @@ namespace ES.Controllers
         {
             if (acc.Username != null && acc.Password != null)
             {
-                var query = _context.Accounts.Where(x => x.Username == acc.Username && x.Password == acc.Password).FirstOrDefault();
+                var query = _context.Account
+                            .Where(x => x.Username == acc.Username && x.Password == acc.Password)
+                            .FirstOrDefault();
                 if (query != null)
                 {
                     HttpContext.Session.SetInt32("IDSession", query.ID);
