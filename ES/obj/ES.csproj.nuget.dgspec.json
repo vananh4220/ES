@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Thực tập\\asp\\ES_ASPNetCore\\ES\\ES\\ES.csproj": {}
+    "D:\\Thực tập\\asp\\ES_LearnASP\\LearnASP\\ES\\ES.csproj": {}
   },
   "projects": {
-    "D:\\Thực tập\\asp\\ES_ASPNetCore\\ES\\ES\\ES.csproj": {
+    "D:\\Thực tập\\asp\\ES_LearnASP\\LearnASP\\ES\\ES.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Thực tập\\asp\\ES_ASPNetCore\\ES\\ES\\ES.csproj",
+        "projectUniqueName": "D:\\Thực tập\\asp\\ES_LearnASP\\LearnASP\\ES\\ES.csproj",
         "projectName": "ES",
-        "projectPath": "D:\\Thực tập\\asp\\ES_ASPNetCore\\ES\\ES\\ES.csproj",
+        "projectPath": "D:\\Thực tập\\asp\\ES_LearnASP\\LearnASP\\ES\\ES.csproj",
         "packagesPath": "C:\\Users\\ladyk\\.nuget\\packages\\",
-        "outputPath": "D:\\Thực tập\\asp\\ES_ASPNetCore\\ES\\ES\\obj\\",
+        "outputPath": "D:\\Thực tập\\asp\\ES_LearnASP\\LearnASP\\ES\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ladyk\\AppData\\Roaming\\NuGet\\NuGet.Config",

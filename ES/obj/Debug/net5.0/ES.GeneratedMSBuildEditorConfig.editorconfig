@@ -7,4 +7,4 @@ build_property.PublishSingleFile =
 build_property.IncludeAllContentForSelfExtract = 
 build_property._SupportedPlatformList = Android,iOS,Linux,macOS,Windows
 build_property.RootNamespace = ES
-build_property.ProjectDir = D:\Thực tập\asp\ES_ASPNetCore\ES\ES\
+build_property.ProjectDir = D:\Thực tập\asp\ES_LearnASP\LearnASP\ES\

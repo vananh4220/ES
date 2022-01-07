@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "HffLhLg7TSCARCYBe+nnswdtLhMtRvx2+MbPiyn5FVNB8vYFBCAPIUztJY7OW4PVx6DcCqGNFByuxU9/DG1WWw==",
+  "dgSpecHash": "Vw527kHx2qmBkkDmx1ue9VXOqGTV3OqZ3LEHMqg2opD26hGdw2UWoXI3lTc2ht2XTyRL5oRYmnf9xr3ZKiDU4Q==",
   "success": true,
-  "projectFilePath": "D:\\Thực tập\\asp\\ES_ASPNetCore\\ES\\ES\\ES.csproj",
+  "projectFilePath": "D:\\Thực tập\\asp\\ES_LearnASP\\LearnASP\\ES\\ES.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ladyk\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\ladyk\\.nuget\\packages\\microsoft.aspnet.mvc\\5.2.7\\microsoft.aspnet.mvc.5.2.7.nupkg.sha512",

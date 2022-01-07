@@ -1,11 +1,6 @@
 ﻿@{
     ViewBag.Title = "Trang chủ";
 }
-<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-    <div class="collapse navbar-collapse justify-content-end">
-        <a class="navbar-brand" href="~/Home/Logout">Logout</a>
-    </div>
-</nav>
 
 <script src="https://code.highcharts.com/highcharts.js"></script>
 <script src="https://code.highcharts.com/modules/series-label.js"></script>
@@ -17,7 +12,7 @@
 </figure>
 
 <script>
-    $(document).ready(function () {
+    function HChart() {
         $.getJSON("/Home/GetData", function (data) {
             debugger;
             var MatTroi = []
@@ -85,5 +80,7 @@
                 }]
             });
         });
-    })
+    }
+    $(document).ready(HChart);
+    setInterval(HChart,60000);
 </script>

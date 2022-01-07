@@ -32,7 +32,6 @@ namespace ES.Controllers
         {
             var query = _context.SoLieu.Select(s => new HienThiSoLieuModel()
             {
-                
                 MT_HT = s.MT_HT,
                 G_HT = s.G_HT,
                 SK_HT = s.SK_HT,
