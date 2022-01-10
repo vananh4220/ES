@@ -14,7 +14,7 @@
 <script>
     function HChart() {
         $.getJSON("/Home/GetData", function (data) {
-            debugger;
+            //debugger;
             var MatTroi = []
             var Gio = []
             var SinhKhoi = []
@@ -22,10 +22,10 @@
             var ThoiGian = []
 
             for (var i = 0; i < data.length; i++) {
-                MatTroi.push(data[i].mT_HT);
-                Gio.push(data[i].g_HT);
-                SinhKhoi.push(data[i].sK_HT);
-                Tong.push(data[i].t_HT);
+                MatTroi.push(data[i].matTroi_HienTai);
+                Gio.push(data[i].gio_HienTai);
+                SinhKhoi.push(data[i].sinhKhoi_HienTai);
+                Tong.push(data[i].tong_HienTai);
                 ThoiGian.push(data[i].thoiGian);
             }
 

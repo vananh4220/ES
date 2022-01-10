@@ -8,10 +8,10 @@ namespace ES.Models
 {
     public class HienThiSoLieuModel
     {
-        public int MT_HT { get; set; }
-        public int G_HT { get; set; }
-        public int SK_HT { get; set; }
-        public int T_HT { get; set; }
+        public int MatTroi_HienTai { get; set; }
+        public int Gio_HienTai { get; set; }
+        public int SinhKhoi_HienTai { get; set; }
+        public int Tong_HienTai { get; set; }
         public string ThoiGian { get; set; }
     }
 }

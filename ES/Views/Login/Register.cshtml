@@ -1,6 +1,5 @@
-﻿@{ 
-    ViewBag.Title = "Login";
-
+﻿@{
+    ViewBag.Title = "Register";
 }
 <div class="container">
     <div class="row text-center">
@@ -8,13 +7,13 @@
             <div class="card">
                 <div class="card-body">
                     <div>
-                        <img class="login-img" src="~/image/login.png" />
+                        <img class="login-img" src="~/image/register.png" />
                     </div>
                     <div class="login-title">
-                        <h4>Log In</h4>
+                        <h4>Register</h4>
                     </div>
                     <div class="login-form mt-4">
-                        <form action="../Login/VerifyLogin" method="post">
+                        <form action="../Login/VerifyRegister" method="post">
                             <div class="form-row">
                                 <div class="form-group col-md-12">
                                     <input id="username" name="Username" placeholder="Username" class="form-control" type="text" value=@ViewBag.Username>
@@ -28,15 +27,9 @@
                             </div>
 
                             <div class="form-row">
-                                <button type="submit" class="btn btn-danger btn-block">Login</button>
+                                <button type="submit" class="btn btn-danger btn-block">Submit</button>
                             </div>
                         </form>
-                    </div>
-                    <div class="form-row">
-                        <a class="repass" href="#">Reset Password </a>
-                    </div>
-                    <div class="form-row">
-                        <a class="repass" href="~/Login/Register">Register</a>
                     </div>
                 </div>
             </div>

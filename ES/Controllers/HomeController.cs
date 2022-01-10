@@ -1,4 +1,6 @@
 ﻿using ES.Models;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -6,10 +8,12 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 
 namespace ES.Controllers
 {
+    [Authorize]
     public class HomeController : Controller
     {
         private readonly DataContext _context;
@@ -20,29 +24,24 @@ namespace ES.Controllers
 
         public IActionResult Index()
         {
-            var IDSession = HttpContext.Session.GetInt32("IDSession");
-            if(IDSession == null)
-            {
-                return RedirectToAction("Index", "Login");
-            }
-            else return View();
+            return View();
         }
         
         public ActionResult GetData()
         {
             var query = _context.SoLieu.Select(s => new HienThiSoLieuModel()
             {
-                MT_HT = s.MT_HT,
-                G_HT = s.G_HT,
-                SK_HT = s.SK_HT,
-                T_HT = s.T_HT,
+                MatTroi_HienTai = s.MT_HT,
+                Gio_HienTai = s.G_HT,
+                SinhKhoi_HienTai = s.SK_HT,
+                Tong_HienTai = s.T_HT,
                 ThoiGian = s.ThoiGian.ToString("dd/MM/yyyy")
             }).ToList();
             return Json(query);
         }
-        public IActionResult Logout()
+        public async Task<IActionResult> Logout()
         {
-            HttpContext.Session.Clear();
+            await HttpContext.SignOutAsync();
             return RedirectToAction("Index", "Login");
         }
 
@@ -56,5 +55,6 @@ namespace ES.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
     }
 }

@@ -1,4 +1,5 @@
 using ES.Models;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -29,10 +30,14 @@ namespace ES
             services.AddControllersWithViews();
             services.AddDbContext<DataContext>(options=> options.UseSqlServer(Configuration.GetConnectionString("DB")));
 
-            services.AddMvc()
-            .AddSessionStateTempDataProvider();
-            services.AddSession(options =>
-            options.IdleTimeout = TimeSpan.FromHours(24));
+            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+                .AddCookie(options =>
+                {
+                    options.LoginPath = "/Login/index";
+                    options.Cookie.Name = "Cookie1";
+                    options.ExpireTimeSpan = TimeSpan.FromHours(24);
+                });
+            services.AddMvc();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -51,11 +56,12 @@ namespace ES
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 
-            app.UseSession();
-
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
+
+            app.UseCookiePolicy();
 
             app.UseEndpoints(endpoints =>
             {
